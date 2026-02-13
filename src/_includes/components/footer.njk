@@ -1,27 +1,44 @@
-<footer class="dark:bg-gray-900">
-  <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-    <div class="sm:flex sm:items-center sm:justify-between">
-      <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo"/>
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-      </a>
-      <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-        <li>
-          <a href="#" class="hover:underline me-4 md:me-6">About</a>
-        </li>
-        <li>
-          <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-        </li>
-        <li>
-          <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
-        </li>
-        <li>
-          <a href="#" class="hover:underline">Contact</a>
-        </li>
-      </ul>
+<footer class="bg-gray-50 text-gray-900">
+  <div class="max-w-screen-xl mx-auto px-4 py-12">
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Brand -->
+      <div class="animate-on-scroll anim-fade-up">
+        <a href="/" class="flex items-center space-x-2 mb-4">
+          <img src="/assets/images/favicon.png" alt="The Poke Project logo" class="h-8 w-8">
+          <span class="font-display text-2xl translate-y-2">The Poke <span class="text-neon-cyan">Project</span></span>
+        </a>
+        <p class="text-gray-500 text-sm">Fresh, colorful, and crafted with aloha. Build your perfect bowl.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="animate-on-scroll anim-fade-up" data-anim-delay="150">
+        <h3 class="font-display text-lg text-neon-green mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-gray-600">
+          <li><a href="/" class="hover-jiggle inline-block hover:text-neon-cyan transition-colors">Home</a></li>
+          <li><a href="/#about" class="hover-jiggle inline-block hover:text-neon-cyan transition-colors">About</a></li>
+          <li><a href="/menu/" class="hover-jiggle inline-block hover:text-neon-cyan transition-colors">Menu</a></li>
+          <li><a href="/#contact" class="hover-jiggle inline-block hover:text-neon-cyan transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="animate-on-scroll anim-fade-up" data-anim-delay="300">
+        <h3 class="font-display text-lg text-neon-pink mb-4">Visit Us</h3>
+        <ul class="space-y-2 text-gray-600 text-sm">
+          <li>{{ client.address.street }}, {{ client.address.city }}, {{ client.address.state }} {{ client.address.zip }}</li>
+          <li>{{ client.phone }}</li>
+          <li>{{ client.email }}</li>
+          <li class="pt-2">
+            <span class="text-poke-orange font-semibold">Mon–Fri:</span> {{ client.hours.weekdays }}
+          </li>
+          <li>
+            <span class="text-poke-orange font-semibold">Sat–Sun:</span> {{ client.hours.weekends }}
+          </li>
+        </ul>
+      </div>
     </div>
-    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
-    <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© {{ global.currentYear }}
-      {{ client.name }}. All Rights Reserved.</span>
+
+    <hr class="my-8 border-gray-200"/>
+    <span class="block text-sm text-gray-400 text-center">&copy; {{ global.currentYear }} {{ client.name }}. All Rights Reserved.</span>
   </div>
 </footer>

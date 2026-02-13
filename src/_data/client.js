@@ -1,10 +1,16 @@
 module.exports = {
-  name: "Client Name",
+  name: "The Poke Project",
   address: {
-    city: "City",
-    state: "State",
-    zip: "12345",
+    street: "14 WILSON AVE",
+    city: "ENGLISHTOWN",
+    state: "NJ",
+    zip: "07726",
   },
-  phone: "123-456-7890",
-  domain: "https://example.com",
+  phone: "(555) 555-5555",
+  email: "thepokeprojectnj@gmail.com",
+  domain: "https://pokeparadise.com",
+  hours: {
+    weekdays: "11:00 AM – 9:00 PM",
+    weekends: "10:00 AM – 10:00 PM",
+  },
 };
