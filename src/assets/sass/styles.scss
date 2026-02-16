@@ -120,6 +120,16 @@
   animation: dropBrick 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+/* md-only scroll animations (visible by default on mobile, animate on md+) */
+@media (min-width: 768px) {
+  .md-animate-on-scroll {
+    opacity: 0;
+  }
+  .md-animate-on-scroll.animate-visible.md-anim-bounce-scale {
+    animation: bounceScale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+}
+
 /* ========================================
    HERO PAGE-LOAD ANIMATIONS
    ======================================== */

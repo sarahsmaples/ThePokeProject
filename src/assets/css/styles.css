@@ -530,8 +530,11 @@ video {
 .inset-0 {
   inset: 0px;
 }
-.-bottom-8 {
-  bottom: -2rem;
+.-bottom-14 {
+  bottom: -3.5rem;
+}
+.-right-4 {
+  right: -1rem;
 }
 .left-0 {
   left: 0px;
@@ -589,6 +592,9 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-6 {
+  margin-top: 1.5rem;
+}
 .block {
   display: block;
 }
@@ -625,6 +631,9 @@ video {
 .h-full {
   height: 100%;
 }
+.min-h-\[120px\] {
+  min-height: 120px;
+}
 .min-h-\[180px\] {
   min-height: 180px;
 }
@@ -653,6 +662,10 @@ video {
   --tw-translate-y: 0.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.rotate-90 {
+  --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -673,6 +686,9 @@ video {
 }
 .gap-0 {
   gap: 0px;
+}
+.gap-2 {
+  gap: 0.5rem;
 }
 .gap-3 {
   gap: 0.75rem;
@@ -817,6 +833,10 @@ video {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -824,17 +844,23 @@ video {
 .pb-0 {
   padding-bottom: 0px;
 }
-.pb-40 {
-  padding-bottom: 10rem;
+.pb-48 {
+  padding-bottom: 12rem;
+}
+.pt-16 {
+  padding-top: 4rem;
 }
 .pt-2 {
   padding-top: 0.5rem;
 }
-.pt-28 {
-  padding-top: 7rem;
+.pt-36 {
+  padding-top: 9rem;
 }
-.pt-48 {
-  padding-top: 12rem;
+.pt-4 {
+  padding-top: 1rem;
+}
+.pt-40 {
+  padding-top: 10rem;
 }
 .text-center {
   text-align: center;
@@ -853,12 +879,12 @@ video {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
 .text-5xl {
   font-size: 3rem;
+  line-height: 1;
+}
+.text-6xl {
+  font-size: 3.75rem;
   line-height: 1;
 }
 .text-lg {
@@ -1097,6 +1123,16 @@ video {
   animation: dropBrick 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+/* md-only scroll animations (visible by default on mobile, animate on md+) */
+@media (min-width: 768px) {
+  .md-animate-on-scroll {
+    opacity: 0;
+  }
+  .md-animate-on-scroll.animate-visible.md-anim-bounce-scale {
+    animation: bounceScale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+}
+
 /* ========================================
    HERO PAGE-LOAD ANIMATIONS
    ======================================== */
@@ -1241,6 +1277,10 @@ video {
     bottom: -2.5rem;
   }
 
+  .md\:right-0 {
+    right: 0px;
+  }
+
   .md\:order-1 {
     order: 1;
   }
@@ -1277,6 +1317,11 @@ video {
     flex: 1 1 0%;
   }
 
+  .md\:rotate-0 {
+    --tw-rotate: 0deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1287,6 +1332,10 @@ video {
 
   .md\:justify-center {
     justify-content: center;
+  }
+
+  .md\:gap-8 {
+    gap: 2rem;
   }
 
   .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
@@ -1311,6 +1360,10 @@ video {
   .md\:py-3 {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
   }
 
   .md\:text-6xl {
@@ -1341,12 +1394,12 @@ video {
     order: 9999;
   }
 
-  .lg\:block {
-    display: block;
+  .lg\:mt-0 {
+    margin-top: 0px;
   }
 
-  .lg\:flex {
-    display: flex;
+  .lg\:block {
+    display: block;
   }
 
   .lg\:min-h-\[500px\] {
@@ -1379,6 +1432,11 @@ video {
   .lg\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .lg\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .lg\:py-16 {
@@ -1423,6 +1481,10 @@ video {
 
   .lg\:pt-40 {
     padding-top: 10rem;
+  }
+
+  .lg\:pt-48 {
+    padding-top: 12rem;
   }
 
   .lg\:text-left {

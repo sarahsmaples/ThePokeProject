@@ -42,7 +42,7 @@ if (navToggle && navMenu) {
     { threshold: 0.15 }
   );
 
-  document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+  document.querySelectorAll(".animate-on-scroll, .md-animate-on-scroll").forEach((el) => {
     observer.observe(el);
   });
 })();

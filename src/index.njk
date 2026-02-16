@@ -17,15 +17,15 @@ description: Build your perfect poke bowl with the freshest fish, vibrant toppin
       {# Cutout layer — transparent shape with massive box-shadow covers the rest #}
       <div class="hero-cutout hero-animate-cutout absolute pointer-events-none"></div>
       {# Spacer for section height #}
-      <div class="relative pt-28 pb-40 lg:pt-40 lg:pb-52"></div>
+      <div class="relative pt-36 pb-48 lg:pt-40 lg:pb-52"></div>
     </section>
     {# Title straddling the cutout edge — outside overflow-hidden #}
     <div class="hero-title absolute left-0 right-0 text-center z-20 pointer-events-none">
       <div class="inline-block relative pointer-events-auto">
-        <h1 class="hero-animate-title font-display text-5xl md:text-[6.5rem] lg:text-[9rem] text-white drop-shadow-lg uppercase">
-          <span class="hero-highlight">The Poké Project</span>
+        <h1 class="hero-animate-title font-display text-6xl md:text-[6.5rem] lg:text-[9rem] text-white drop-shadow-lg uppercase">
+          <span class="hero-highlight">The Poké<br class="md:hidden"> Project</span>
         </h1>
-        <a href="/menu/" class="hero-animate-button btn-sweep btn-sweep-dark hover-wiggle absolute -bottom-8 right-0 md:-bottom-10 lg:-bottom-14 text-white font-body font-bold py-2 px-6 md:py-3 md:px-8 lg:py-4 lg:px-10 rounded-full text-sm md:text-[2.125rem] lg:text-[2.125rem] border-2 border-gray-900 uppercase">
+        <a href="/menu/" class="hero-animate-button btn-sweep btn-sweep-dark hover-wiggle absolute -bottom-14 -right-4 md:right-0 md:-bottom-10 lg:-bottom-14 text-white font-body font-bold py-4 px-10 md:py-3 md:px-8 lg:py-4 lg:px-10 rounded-full text-lg md:text-[2.125rem] lg:text-[2.125rem] border-2 border-gray-900 uppercase">
           View Menu &rarr;
         </a>
       </div>
@@ -34,10 +34,10 @@ description: Build your perfect poke bowl with the freshest fish, vibrant toppin
 
   <style>
     .hero-cutout {
-      top: 8%;
+      top: 4%;
       left: 5%;
       right: 5%;
-      bottom: 8%;
+      bottom: 4%;
       border-radius: 1.5rem 3rem 1.5rem 3rem;
       box-shadow: 0 0 0 9999px #ffffff;
     }
@@ -82,12 +82,17 @@ description: Build your perfect poke bowl with the freshest fish, vibrant toppin
       content: '';
       position: absolute;
       top: 0;
-      right: 0;
+      right: -1em;
       bottom: 0;
       left: -100vw;
       background: #d43f8a;
       border-radius: 0 1.2rem 1.2rem 0;
       z-index: -1;
+    }
+    @media (min-width: 768px) {
+      .hero-highlight::before {
+        right: 0;
+      }
     }
     .highlight-extend-right {
       background: #f26722;
@@ -100,6 +105,15 @@ description: Build your perfect poke bowl with the freshest fish, vibrant toppin
     }
     .highlight-extend-left {
       background: #d43f8a;
+      padding: 0.25em 0.6em 0.45em 100vw;
+      margin-left: -100vw;
+      border-radius: 0 2rem 0.4rem 0;
+      display: inline;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .highlight-extend-left-teal {
+      background: #048c44;
       padding: 0.25em 0.6em 0.45em 100vw;
       margin-left: -100vw;
       border-radius: 0 2rem 0.4rem 0;
@@ -130,22 +144,22 @@ description: Build your perfect poke bowl with the freshest fish, vibrant toppin
   </style>
 
   {# ===== DIVIDER ===== #}
-  <div class="relative z-0 hidden lg:flex justify-center pt-48 pb-0 bg-white">
+  <div class="relative z-0 flex justify-center pt-40 lg:pt-48 pb-0 bg-white">
     <svg width="120" height="20" viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 10C10 0 20 20 30 10C40 0 50 20 60 10C70 0 80 20 90 10C100 0 110 20 120 10" stroke="#05ffff" stroke-width="4" stroke-linecap="round" fill="none"/>
     </svg>
   </div>
 
   {# ===== MENU CTA ===== #}
-  <section class="py-12 lg:py-28 bg-white overflow-hidden">
+  <section class="pt-16 pb-0 lg:py-28 bg-white overflow-hidden">
     <div class="flex flex-col lg:flex-row items-stretch gap-0">
       <!-- Multi-poke image - left on desktop, below content on mobile -->
-      <div class="lg:w-1/2 relative min-h-[180px] lg:min-h-[500px] order-1 lg:order-first">
+      <div class="lg:w-1/2 relative min-h-[120px] lg:min-h-[500px] order-1 lg:order-first mt-6 lg:mt-0">
         <div class="cta-image-mobile lg:cta-image absolute inset-0">
           <img src="/assets/images/multi-poke.jpg" alt="Poke bowls" class="w-full h-full object-cover">
         </div>
         <div class="absolute inset-0 flex items-center justify-center z-10">
-          <div class="font-display uppercase text-center text-5xl md:text-6xl lg:text-6xl xl:text-8xl leading-none space-y-0 lg:space-y-3 flex lg:block gap-3">
+          <div class="font-display uppercase text-center text-5xl md:text-6xl lg:text-6xl xl:text-8xl leading-none space-y-0 lg:space-y-3 flex lg:block gap-3 py-6 lg:py-0">
             <span class="animate-on-scroll anim-drop-brick bg-white text-poke-green px-3 py-1 lg:px-4 inline-block rounded-sm" data-anim-delay="0">Build</span>
             <span class="animate-on-scroll anim-drop-brick bg-poke-orange text-white px-3 py-1 lg:px-4 inline-block rounded-sm" data-anim-delay="200">Your</span>
             <span class="animate-on-scroll anim-drop-brick bg-gray-900 text-neon-green px-3 py-1 lg:px-4 inline-block rounded-sm" data-anim-delay="400">Bowl</span>
@@ -168,7 +182,7 @@ description: Build your perfect poke bowl with the freshest fish, vibrant toppin
   </section>
 
   {# ===== DIVIDER ===== #}
-  <div class="relative z-0 hidden lg:flex justify-center py-8 bg-white">
+  <div class="relative z-0 flex justify-center py-8 bg-white">
     <svg width="120" height="20" viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 10C10 0 20 20 30 10C40 0 50 20 60 10C70 0 80 20 90 10C100 0 110 20 120 10" stroke="#05ffff" stroke-width="4" stroke-linecap="round" fill="none"/>
     </svg>
@@ -177,11 +191,11 @@ description: Build your perfect poke bowl with the freshest fish, vibrant toppin
   {# ===== INFO ===== #}
   <section id="about" class="relative z-0 py-12 lg:py-20 bg-white">
     <div class="max-w-screen-xl mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-8 lg:gap-12 items-center">
+      <div class="grid md:grid-cols-3 gap-2 md:gap-8 lg:gap-12 items-center">
         <!-- Hours -->
         <div class="text-center order-3 md:order-1">
-          <h2 class="font-display text-4xl lg:text-5xl text-white mb-6 animate-on-scroll anim-bounce-scale"><span class="highlight highlight-orange hover-wiggle inline-block">Hours</span></h2>
-          <div class="space-y-3 text-lg text-gray-800 animate-on-scroll anim-fade-up" data-anim-delay="200">
+          <h2 class="font-display text-5xl lg:text-5xl text-white mb-6 animate-on-scroll anim-bounce-scale"><span class="highlight-extend-right hover-wiggle inline-block">Hours</span></h2>
+          <div class="pt-4 md:pt-0 space-y-3 text-lg text-gray-800 animate-on-scroll anim-fade-up" data-anim-delay="200">
             <div>
               <span class="font-bold">Mon–Fri</span><br>
               {{ client.hours.weekdays }}
@@ -193,13 +207,13 @@ description: Build your perfect poke bowl with the freshest fish, vibrant toppin
           </div>
         </div>
         <!-- Image -->
-        <div class="flex justify-center order-2 animate-on-scroll anim-bounce-scale" data-anim-delay="100">
-          <img src="/assets/images/poke-window.png" alt="The Poke Project" class="hover-rock max-w-[50%] md:max-w-full h-auto rounded-3xl">
+        <div class="flex justify-center order-2 md-animate-on-scroll md-anim-bounce-scale" data-anim-delay="100">
+          <img src="/assets/images/poke-window.png" alt="The Poke Project" class="hover-rock max-w-[50%] md:max-w-full h-auto rounded-3xl rotate-90 md:rotate-0">
         </div>
         <!-- Location & Phone -->
         <div class="text-center order-1 md:order-3">
-          <h2 class="font-display text-4xl lg:text-5xl text-white mb-6 animate-on-scroll anim-bounce-scale" data-anim-delay="200"><span class="highlight highlight-teal hover-wiggle inline-block">Visit Us</span></h2>
-          <div class="space-y-3 text-lg text-gray-800 animate-on-scroll anim-fade-up" data-anim-delay="400">
+          <h2 class="font-display text-5xl lg:text-5xl text-white mb-6 animate-on-scroll anim-bounce-scale" data-anim-delay="200"><span class="highlight-extend-left-teal hover-wiggle inline-block">Visit Us</span></h2>
+          <div class="pt-4 md:pt-0 space-y-3 text-lg text-gray-800 animate-on-scroll anim-fade-up" data-anim-delay="400">
             <p>
               <a href="https://maps.app.goo.gl/tk2ntD5fK2MfVv9o6" target="_blank" rel="noopener noreferrer" class="hover:text-neon-magenta transition-colors">
                 {{ client.address.street }}<br>
