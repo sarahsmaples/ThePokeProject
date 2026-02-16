@@ -55,24 +55,29 @@
 
   </head>
 
-  <body class="font-body bg-white text-gray-900">
+  <body class="font-body bg-white text-gray-900 ">
     <nav class="bg-white shadow-md sticky top-0 z-50">
   <div class="max-w-screen-xl flex flex-wrap items-center mx-auto p-4">
     <!-- Logo - left -->
-    <a href="/" class="flex items-center space-x-2">
+    <a href="/" class="flex items-center space-x-2 relative z-[60]">
       <img src="/assets/images/favicon.png" alt="The Poke Project logo" class="h-8 w-8">
       <span class="font-display text-2xl translate-y-2">The Poke <span class="text-neon-blue">Project</span></span>
     </a>
     <!-- Hamburger -->
-    <button id="nav-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-900 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 ml-auto" aria-controls="navbar-menu" aria-expanded="false">
+    <button id="nav-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-900 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 ml-auto relative z-[60]" aria-controls="navbar-menu" aria-expanded="false">
       <span class="sr-only">Open main menu</span>
-      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+      <!-- Hamburger icon -->
+      <svg class="nav-icon-open w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
       </svg>
+      <!-- Close icon -->
+      <svg class="nav-icon-close w-5 h-5 hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1l12 12M13 1L1 13"/>
+      </svg>
     </button>
-    <!-- Nav links - centered -->
-    <div class="hidden w-full md:flex md:w-auto md:flex-1 md:justify-center" id="navbar-menu">
-      <ul class="font-body font-bold flex flex-col p-4 md:p-0 mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:bg-transparent uppercase text-lg">
+    <!-- Fullscreen mobile menu overlay -->
+    <div class="nav-overlay nav-closed md:flex-1 md:justify-center" id="navbar-menu">
+      <ul class="font-display md:font-body font-bold flex flex-col items-center gap-8 md:gap-0 md:p-0 md:flex-row md:space-x-8 md:bg-transparent uppercase text-5xl md:text-lg">
         <li>
           <a href="/" class="hover-jiggle inline-block py-2 px-3 text-gray-900 hover:text-poke-red md:p-0 transition-colors">Home</a>
         </li>
@@ -86,7 +91,7 @@
           <a href="/#contact" class="hover-jiggle inline-block py-2 px-3 text-gray-900 hover:text-neon-blue md:p-0 transition-colors">Contact</a>
         </li>
         <li class="md:hidden">
-          <a href="https://88restaurants.com/1153/online_orders/new" class="block py-2 px-3 text-gray-900 hover:text-poke-red transition-colors">Order Now</a>
+          <a href="https://88restaurants.com/1153/online_orders/new" class="btn-sweep btn-sweep-green hover-wiggle inline-block py-3 px-8 text-white rounded-full border-2 border-gray-900 mt-4">Order Now</a>
         </li>
       </ul>
     </div>
@@ -211,6 +216,18 @@
       display: inline;
       box-decoration-break: clone;
       -webkit-box-decoration-break: clone;
+    }
+    @media (min-width: 768px) {
+      .highlight-extend-right {
+        padding: 0.25em 0.5em 0.4em;
+        margin-right: 0;
+        border-radius: 0.4rem 1.6rem 0.6rem 2rem;
+      }
+      .highlight-extend-left-teal {
+        padding: 0.25em 0.5em 0.4em;
+        margin-left: 0;
+        border-radius: 1.8rem 0.5rem 2.2rem 0.3rem;
+      }
     }
     .btn-sweep {
       background-size: 200% 100%;
@@ -443,6 +460,7 @@
 
     <hr class="my-8 border-gray-200"/>
     <span class="block text-sm text-gray-400 text-center">&copy; 2026 The Poke Project. All Rights Reserved.</span>
+    <span class="block text-sm text-gray-400 text-center mt-1"><a href="https://www.88restaurants.com" target="_blank" rel="noopener noreferrer" class="hover:text-neon-cyan transition-colors">Restaurant Website Designed by 88 Restaurants</a></span>
   </div>
 </footer>
 

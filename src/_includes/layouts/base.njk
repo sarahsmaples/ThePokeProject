@@ -55,12 +55,12 @@
 
   </head>
 
-  <body class="font-body bg-white text-gray-900">
+  <body class="font-body bg-white text-gray-900 {% block bodyClass %}{% endblock %}">
     {% include "components/header.njk" %}
     <main>
       {% block content %}{% endblock %}
     </main>
-    {% include "components/footer.njk" %}
+    {% block footer %}{% include "components/footer.njk" %}{% endblock %}
     <script src="/assets/js/main.js"></script>
   </body>
 </html>

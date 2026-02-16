@@ -1,12 +1,35 @@
-// Mobile nav toggle
+// Mobile nav toggle — fullscreen overlay
 const navToggle = document.getElementById("nav-toggle");
 const navMenu = document.getElementById("navbar-menu");
 
 if (navToggle && navMenu) {
+  const iconOpen = navToggle.querySelector(".nav-icon-open");
+  const iconClose = navToggle.querySelector(".nav-icon-close");
+
+  const openMenu = () => {
+    navMenu.classList.remove("nav-closed");
+    document.body.style.overflow = "hidden";
+    if (iconOpen) iconOpen.classList.add("hidden");
+    if (iconClose) iconClose.classList.remove("hidden");
+    navToggle.setAttribute("aria-expanded", "true");
+  };
+
+  const closeMenu = () => {
+    navMenu.classList.add("nav-closed");
+    document.body.style.overflow = "";
+    if (iconOpen) iconOpen.classList.remove("hidden");
+    if (iconClose) iconClose.classList.add("hidden");
+    navToggle.setAttribute("aria-expanded", "false");
+  };
+
   navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("hidden");
-    const expanded = navToggle.getAttribute("aria-expanded") === "true";
-    navToggle.setAttribute("aria-expanded", !expanded);
+    const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  // Close menu when a nav link is clicked
+  navMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
   });
 }
 
